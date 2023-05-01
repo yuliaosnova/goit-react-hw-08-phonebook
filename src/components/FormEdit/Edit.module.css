@@ -1,0 +1,64 @@
+.Overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 210;
+ }
+ 
+ .Modal {
+	max-width: calc(100vw - 48px);
+	max-height: calc(100vh - 24px);
+ }
+
+ .FeedbackForm {
+	display: flex;
+	flex-direction: column;
+	padding: 12px;
+	width: 500px;
+	/* background-color:#e6ecf7; */
+	background-color: rgba(74, 189, 137, 0.684);
+	border: none;
+	border-radius: 4px;
+ 
+ }
+ 
+ .FeedbackForm label {
+	flex-direction: column;
+	margin-bottom: 8px;
+	position: relative;
+	border: none;
+	outline: none;
+	color: #455561;
+ }
+ 
+ .InputForm {
+	padding: 20px 10px 10px 10px;
+	margin-bottom: 18px;
+	font-size: inherit;
+	font-weight: inherit;
+	border: 1px solid #cbd6e2;
+	outline: none;
+	border-radius: 4px;
+ }
+ 
+ .ButtonSubmit {
+	display: block;
+	padding: 20px 30px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #ccc;
+	font-size: 14px;
+	width: 200px;
+	overflow: hidden;
+	border-radius: 4px;
+	background-color: #455561;
+	border: none;
+	cursor: pointer;
+ }
+

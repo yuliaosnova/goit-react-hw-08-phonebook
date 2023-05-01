@@ -1,0 +1,22 @@
+.AddBtn {
+	width: 6rem;
+	height: 6rem;
+	background-color: #455561;
+	border-radius: 8rem;
+	border: none;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 0;
+	margin-right: 2rem;
+	display: flex;
+   cursor: pointer;
+  color: #ccc;
+  position: absolute;
+  left: 80px;
+  top:100px;
+  
+}
+
+.AddBtn:hover {
+	background-color: #36414a;
+}

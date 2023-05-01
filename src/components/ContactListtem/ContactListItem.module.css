@@ -1,0 +1,38 @@
+.DeleteBtn {
+  background-color: #455561;
+  color: white;
+  border: none;
+}
+
+.EditBtn {
+	background-color: #31b88c;
+	color: white;
+	border: none;
+ }
+
+ .DeleteBtn:hover {
+	background-color: #36414a;
+}
+
+.EditBtn:hover {
+	background-color: #2a9772;
+}
+.Wrapper {
+	display: flex;
+}
+
+.Info {
+  margin: 0;
+}
+
+.Label {
+  font-weight: 600;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #31b88c;
+}
+
+.Data {
+  color: #455561;
+  font-weight: 500;
+}
