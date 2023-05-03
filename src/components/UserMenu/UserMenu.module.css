@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.username {
+  font-weight: 700;
+  color: #fff;
+}
+
+.button {
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	background-color: #31b88c;
+	border: 0.125rem solid #fff;
+	border-radius: 0.5rem;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	font-weight: 500;
+	transition: border-color .25s,background-color .25s;
+}

@@ -1,0 +1,35 @@
+.form {
+  width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.btn {
+  text-align: center;
+  white-space: nowrap;
+
+  border-radius: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: border-color 0.25s, background-color 0.25s;
+  margin: 0 auto;
+  display: block;
+
+  color: #fff;
+  background-color: #31b88c;
+  border: 0.125rem solid #31b88c;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #2ca67d;
+  border: 0.125rem solid #2ca67d;
+}

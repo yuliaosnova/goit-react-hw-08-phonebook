@@ -1,0 +1,10 @@
+.AuthContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.Link {
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: 500;
+}

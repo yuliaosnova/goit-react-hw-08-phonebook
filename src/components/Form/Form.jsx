@@ -9,7 +9,6 @@ import {
 } from 'redux/contactsSlice';
 import toast from 'react-hot-toast';
 
-
 export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -17,7 +16,6 @@ export default function Form() {
   const [addContact] = useAddContactMutation();
 
   const { data: contacts } = useGetContactsQuery();
-
 
   const dispatch = useDispatch();
 
@@ -43,9 +41,10 @@ export default function Form() {
     if (check) {
       toast.error(`${name} is already in contacts`);
     } else {
-      addContact({ name, phone: number });
+		console.log("name number", name, number )
+      addContact({ name, number });
       toast.success('Contact added!');
-		
+
       dispatch(setShowModal());
     }
     reset();
@@ -86,7 +85,6 @@ export default function Form() {
       <button type="submit" className={css.ButtonSubmit}>
         Add contact
       </button>
-      
     </form>
   );
 }

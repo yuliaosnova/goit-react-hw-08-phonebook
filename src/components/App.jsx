@@ -1,23 +1,54 @@
-import Form from './Form/Form';
-import { ContactList } from './ContactList/ContactsList';
 import { Layout } from './Layout/Layout';
-import Modal from './Modal/Modal';
-import { useSelector } from 'react-redux';
-import { Toaster } from 'react-hot-toast';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
+import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useAuth } from 'hooks/useAuth';
+import { useEffect, lazy } from 'react';
+import { refreshUser } from 'redux/auth/operations';
+
+const HomePage = lazy(() => import('../pages/Home'));
+const RegisterPage = lazy(() => import('../pages/Register'));
+const LoginPage = lazy(() => import('../pages/Login'));
+const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export default function App() {
-  const showModal = useSelector(state => state.showModal);
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
-  return (
-    <>
-      <Layout />
-      {showModal && (
-        <Modal>
-          <Form />
-        </Modal>
-      )}
-      <ContactList />
-      <Toaster position="top-center" reverseOrder={false} />
-    </>
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegisterPage />}
+            />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="contacts"
+          //  element={<ContactsPage />}
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
+      </Route>
+    </Routes>
   );
 }

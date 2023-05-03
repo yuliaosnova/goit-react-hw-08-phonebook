@@ -44,7 +44,7 @@ export const ContactListItem = ({ item, getContactId }) => {
         </p>
         <p className={css.Info}>
           <span className={css.Label}>Phone:</span>
-          <span className={css.Data}>{item.phone}</span>
+          <span className={css.Data}>{item.number}</span>
         </p>
       </div>
     </div>

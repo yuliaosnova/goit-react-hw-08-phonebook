@@ -5,8 +5,10 @@ import { useUpdateContactMutation } from 'redux/contactsSlice';
 import toast from 'react-hot-toast';
 import { setShowEditModal } from 'redux/showEditModalSlice';
 
-export default function FormEdit({ contact }) {
-  console.log('CONTACT', contact);
+export default function FormEdit({ contactId }) {
+  
+  console.log('contact id in EDIT', contactId)
+//   const { data: contact } = useGetContactByIdQuery(contactId);
 
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -34,7 +36,7 @@ export default function FormEdit({ contact }) {
     event.preventDefault();
 
     try {
-      await updateContact({ name: name, phone: number, id: contact.id });
+      await updateContact({ name: name, number: number, id: contactId });
       toast.success('Contact updated!');
       dispatch(setShowEditModal());
       reset();
