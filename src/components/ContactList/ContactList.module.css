@@ -34,12 +34,6 @@
 	border-radius: 0 0 12px 8px;
 }
 
-/* .Container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} */
-
 .Item {
 	gap: 5px;
 }
